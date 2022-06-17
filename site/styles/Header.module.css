@@ -1,0 +1,19 @@
+.navbarWrapper {
+  padding: 0.5rem;
+}
+
+.navRhs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.searchBar {
+  display: none;
+}
+
+.modeToggler {
+  display: flex;
+  cursor: pointer;
+}
