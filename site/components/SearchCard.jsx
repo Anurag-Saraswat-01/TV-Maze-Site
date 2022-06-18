@@ -1,12 +1,13 @@
 import styles from "../styles/SearchCard.module.css";
 import Image from "next/image";
+import Blank from "../assets/Blank.png";
 
 const SearchCard = ({ data }) => {
   return (
     <div className={styles.container}>
       <div className={styles.imageWrapper}>
         <Image
-          src={data.image.medium}
+          src={data.image ? data.image.medium : Blank}
           alt={data.name}
           width={200}
           height={200}
@@ -14,7 +15,9 @@ const SearchCard = ({ data }) => {
       </div>
       <div className={styles.textWrapper}>
         <h4 className={styles.title}>{data.name}</h4>
-        <h5 className={styles.year}>{`(${data.premiered.slice(0, 4)})`}</h5>
+        {data.premiered && (
+          <h5 className={styles.year}>{`(${data.premiered.slice(0, 4)})`}</h5>
+        )}
       </div>
     </div>
   );
