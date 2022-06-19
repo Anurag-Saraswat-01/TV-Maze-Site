@@ -94,15 +94,12 @@ const show = () => {
           </div>
           <div className={styles.imageWrapper}>
             {showData.image ? (
-              <picture>
-                <source srcSet={showData.image.original} type="image/webp" />
-                <img
-                  className={styles.image}
-                  src={showData.image.original}
-                  alt={showData.name}
-                  loading="lazy"
-                />
-              </picture>
+              <img
+                className={styles.image}
+                src={showData.image.original}
+                alt={showData.name}
+                loading="lazy"
+              />
             ) : (
               <Image src={Blank} alt={showData.name} objectFit="cover" />
             )}

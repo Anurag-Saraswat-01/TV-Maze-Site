@@ -10,21 +10,23 @@ const Carousel = () => {
   const [hero, setHero] = useState(0);
   const imageArr = [TGP, BB, B99, ATLA];
 
-  const updateHero = () => {
-    setHero(hero === imageArr.length - 1 ? 0 : hero + 1);
-  };
-  setInterval(updateHero, 1500);
-
-  return (
-    <div className={styles.imageWrapper}>
+  const images = (hero) => {
+    return (
       <Image
         src={imageArr[hero]}
         alt="Hero"
         className={styles.heroImage}
         placeholder="blur"
       />
-    </div>
-  );
+    );
+  };
+
+  const updateHero = () => {
+    setHero(hero === imageArr.length - 1 ? 0 : hero + 1);
+  };
+  setInterval(updateHero, 1500);
+
+  return <div className={styles.imageWrapper}>{images(hero)}</div>;
 };
 
 export default Carousel;

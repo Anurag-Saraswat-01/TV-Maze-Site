@@ -7,15 +7,12 @@ const SeasonCard = ({ data }) => {
     <div className={styles.container}>
       <div className={styles.imageWrapper}>
         {data.image ? (
-          <picture>
-            <source srcSet={data.image.original} type="image/webp" />
-            <img
-              src={data.image.original}
-              alt={`Season ${data.number}`}
-              className={styles.image}
-              loading="lazy"
-            />
-          </picture>
+          <img
+            src={data.image.original}
+            alt={`Season ${data.number}`}
+            className={styles.image}
+            loading="lazy"
+          />
         ) : (
           <Image
             src={Blank}

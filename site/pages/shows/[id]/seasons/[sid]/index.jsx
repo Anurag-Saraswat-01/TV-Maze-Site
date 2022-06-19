@@ -88,30 +88,17 @@ const season = () => {
           </h2>
           <div className={styles.imageWrapper}>
             {seasonData.image.original ? (
-              <picture>
-                <source
-                  srcSet={
-                    seasonData._embedded.seasons[parseInt(sid) - 1].image
-                      .original
-                      ? seasonData._embedded.seasons[parseInt(sid) - 1].image
-                          .original
-                      : seasonData.image.original
-                  }
-                  type="image/webp"
-                />
-                <img
-                  className={styles.image}
-                  src={
-                    seasonData._embedded.seasons[parseInt(sid) - 1].image
-                      .original
-                      ? seasonData._embedded.seasons[parseInt(sid) - 1].image
-                          .original
-                      : seasonData.image.original
-                  }
-                  alt={seasonData.name}
-                  loading="lazy"
-                />
-              </picture>
+              <img
+                className={styles.image}
+                src={
+                  seasonData._embedded.seasons[parseInt(sid) - 1].image.original
+                    ? seasonData._embedded.seasons[parseInt(sid) - 1].image
+                        .original
+                    : seasonData.image.original
+                }
+                alt={seasonData.name}
+                loading="lazy"
+              />
             ) : (
               <Image
                 className={styles.image}
