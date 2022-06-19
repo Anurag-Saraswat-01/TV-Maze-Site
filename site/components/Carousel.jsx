@@ -17,6 +17,7 @@ const Carousel = () => {
         alt="Hero"
         className={styles.heroImage}
         placeholder="blur"
+        priority
       />
     );
   };

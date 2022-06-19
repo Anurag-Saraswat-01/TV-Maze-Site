@@ -8,7 +8,7 @@
 }
 
 @media only screen and (min-width: 1280px) {
-    .imageWrapper {
-        max-width: 600px;
-    }
+  .imageWrapper {
+    width: 100%;
+  }
 }
