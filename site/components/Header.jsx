@@ -3,6 +3,8 @@ import { FaSearch } from "react-icons/fa";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Image from "next/image";
+import TV from "../assets/television.png";
 
 const Header = () => {
   const router = useRouter();
@@ -19,11 +21,16 @@ const Header = () => {
 
   return (
     <nav className={styles.navbar}>
-      <h1 className={styles.navTitle}>
-        <Link href="/">
-          <a>IMDb but better</a>
-        </Link>
-      </h1>
+      <Link href="/">
+        <a>
+          <div className={styles.navBrand}>
+            <div className={styles.imageWrapper}>
+              <Image src={TV} alt="nav logo" />
+            </div>
+            <h1 className={styles.navTitle}>IMDb but better</h1>
+          </div>
+        </a>
+      </Link>
       <form className={styles.navForm} role="search" onSubmit={handleSubmit}>
         <input
           className={styles.searchBar}
@@ -33,7 +40,11 @@ const Header = () => {
           value={searchTerm}
           onChange={handleChange}
         />
-        <FaSearch color="white" size={20} onClick={handleSubmit} />
+        <FaSearch
+          className={styles.searchIcon}
+          size={20}
+          onClick={handleSubmit}
+        />
       </form>
     </nav>
   );

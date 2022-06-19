@@ -1,0 +1,14 @@
+.imageWrapper {
+  display: flex;
+  border-radius: 8px;
+}
+
+.heroImage {
+  border-radius: 8px;
+}
+
+@media only screen and (min-width: 1280px) {
+    .imageWrapper {
+        max-width: 600px;
+    }
+}

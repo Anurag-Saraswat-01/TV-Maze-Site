@@ -1,14 +1,52 @@
 .navbar {
-  padding: 0.5rem;
-  background-color: black;
+  padding: 1rem;
+  background-color: var(--bg-dark);
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.navBrand {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .navTitle {
   margin: 0;
+  font-family: var(--brand);
+  display: inline;
+}
+
+.imageWrapper {
+  display: flex;
+  width: 24px;
+}
+
+.searchBar {
+  border: none;
+  border-radius: 8px;
+  padding: 0.25rem 0.5rem;
+  font-family: var(--body);
+  font-weight: 500;
+  width: 100px;
+}
+
+.searchBar:focus {
+  outline: none;
+  border: 2px solid var(--secondary);
+}
+
+.searchIcon {
+  cursor: pointer;
+}
+
+.searchIcon:hover,
+.searchIcon:focus {
+  color: var(--secondary);
 }
 
 .navForm {
@@ -16,4 +54,24 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+
+  .imageWrapper {
+    width: 32px;
+  }
+
+  .searchBar {
+    width: auto;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .navbar {
+    padding: 1rem calc(50% - 640px + 2rem);
+  }
 }

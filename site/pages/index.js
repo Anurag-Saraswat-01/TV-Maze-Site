@@ -1,9 +1,6 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Hero from "../assets/TheGoodPlace.png";
+import Carousel from "../components/Carousel";
 
 export default function Home() {
   return (
@@ -14,24 +11,40 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <div className={styles.homeContainer}>
-          {/* Make this a carousel */}
-          <div className={styles.homeImageWrapper}>
-            <Image src={Hero} alt="Hero" />
-          </div>
-          <div className={styles.homeTextWrapper}>
-            <h1 className={styles.homeHeader}>Welcome to IMDb but better!</h1>
-            <div>
-              <p>
-                IMDb but better is a one-stop Web Application where you can view
-                information about any TV show, it's seasons and each episode!
-              </p>
-              <p>The app is built using NextJS and uses the TVmaze API.</p>
-              <p>
-                Use the search option in the navbar to start looking for your
-                favourite shows! Have fun exploring!
-              </p>
-            </div>
+        <Carousel />
+        <div className={styles.textWrapper}>
+          <h1 className={styles.title}>
+            Welcome to <br /> IMDb but better!
+          </h1>
+          <div className={styles.text}>
+            <p>
+              IMDb but better is a one-stop Web Application where you can view
+              information about any TV show, it's seasons and each episode!
+            </p>
+            <p>
+              The app is built using{" "}
+              <a
+                href="https://nextjs.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                NextJS
+              </a>{" "}
+              and uses the{" "}
+              <a
+                href="https://www.tvmaze.com/api"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                TVmaze API
+              </a>
+              .
+            </p>
+            <p>
+              Use the search option in the navbar to start looking for your
+              favourite shows! Have fun exploring!
+            </p>
+            <p>Peace Out! ✌</p>
           </div>
         </div>
       </main>
