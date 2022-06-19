@@ -24,7 +24,7 @@ const Carousel = () => {
   const updateHero = () => {
     setHero(hero === imageArr.length - 1 ? 0 : hero + 1);
   };
-  setInterval(updateHero, 1500);
+  setInterval(updateHero, 2000);
 
   return <div className={styles.imageWrapper}>{images(hero)}</div>;
 };
