@@ -7,12 +7,15 @@ const SearchCard = ({ data }) => {
     <div className={styles.container}>
       <div className={styles.imageWrapper}>
         {data.image ? (
-          <img
-            className={styles.image}
-            src={data.image.original}
-            alt={data.name}
-            loading="lazy"
-          />
+          <picture>
+            <source src={data.image.original} type="image/webp" />
+            <img
+              className={styles.image}
+              src={data.image.original}
+              alt={data.name}
+              loading="lazy"
+            />
+          </picture>
         ) : (
           <Image
             className={styles.image}

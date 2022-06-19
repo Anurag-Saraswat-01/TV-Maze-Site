@@ -11,7 +11,7 @@ const EpisodeCard = ({ data, uniqueKey }) => {
     summary.innerHTML = data.summary
       ? data.summary
       : "<p>Summary Unavailable :(</p>";
-  }, [data]);
+  }, [data, uniqueKey]);
 
   return (
     <div className={styles.container}>
@@ -28,12 +28,15 @@ const EpisodeCard = ({ data, uniqueKey }) => {
       </div>
       <div className={styles.imageWrapper}>
         {data.image ? (
-          <img
-            className={styles.image}
-            src={data.image.original}
-            alt={`Episode ${data.number}`}
-            loading="lazy"
-          />
+          <picture>
+            <source src={data.image.original} type="image/webp" />
+            <img
+              className={styles.image}
+              src={data.image.original}
+              alt={`Episode ${data.number}`}
+              loading="lazy"
+            />
+          </picture>
         ) : (
           <Image
             className={styles.image}

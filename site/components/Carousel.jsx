@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import TGP from "../assets/TheGoodPlace.png";
 import BB from "../assets/BreakingBad.png";
-import Friends from "../assets/Friends.png";
+import B99 from "../assets/B99.png";
 import ATLA from "../assets/Atla.png";
 
 const Carousel = () => {
   const [hero, setHero] = useState(0);
-  const imageArr = [TGP, BB, Friends, ATLA];
+  const imageArr = [TGP, BB, B99, ATLA];
 
   const updateHero = () => {
     setHero(hero === imageArr.length - 1 ? 0 : hero + 1);

@@ -7,12 +7,15 @@ const CastCard = ({ name, role, img }) => {
     <div className={styles.container}>
       <div className={styles.imageWrapper}>
         {img ? (
-          <img
-            src={img.original}
-            alt={name}
-            className={styles.image}
-            loading="lazy"
-          />
+          <picture>
+            <source srcSet={img.original} type="image/webp" />
+            <img
+              src={img.original}
+              alt={name}
+              className={styles.image}
+              loading="lazy"
+            />
+          </picture>
         ) : (
           <Image
             className={styles.image}
