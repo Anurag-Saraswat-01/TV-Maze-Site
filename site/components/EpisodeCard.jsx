@@ -10,31 +10,40 @@ const EpisodeCard = ({ data, uniqueKey }) => {
     let summary = document.getElementById(`summary-${uniqueKey}`);
     summary.innerHTML = data.summary
       ? data.summary
-      : "<p>Summary Unavailable</p>";
+      : "<p>Summary Unavailable :(</p>";
   }, [data]);
 
   return (
     <div className={styles.container}>
-      <div className={styles.imageWrapper}>
-        <Image
-          src={data.image ? data.image.medium : Blank}
-          alt={`Episode ${data.number}`}
-          width={200}
-          height={200}
-        />
-      </div>
-      <div className={styles.textWrapper}>
+      <div className={styles.headers}>
         <h4 className={styles.title}>
           {data.number}. {data.name}
         </h4>
         <div className={styles.infoWrapper}>
           <div className={styles.info}>{data.airdate}</div>
           <div className={styles.info}>
-            <FaStar /> {data.rating.average}
+            <FaStar color="gold" /> {data.rating.average}
           </div>
         </div>
-        <div id={`summary-${uniqueKey}`} className={styles.summary}></div>
       </div>
+      <div className={styles.imageWrapper}>
+        {data.image ? (
+          <img
+            className={styles.image}
+            src={data.image.original}
+            alt={`Episode ${data.number}`}
+            loading="lazy"
+          />
+        ) : (
+          <Image
+            className={styles.image}
+            src={Blank}
+            alt={`Episode ${data.number}`}
+            objectFit="cover"
+          />
+        )}
+      </div>
+      <div id={`summary-${uniqueKey}`} className={styles.summary}></div>
     </div>
   );
 };

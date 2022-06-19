@@ -6,12 +6,21 @@ const CastCard = ({ name, role, img }) => {
   return (
     <div className={styles.container}>
       <div className={styles.imageWrapper}>
-        <Image
-          src={img ? img.medium : PersonPlaceholder}
-          alt={name}
-          width={200}
-          height={200}
-        />
+        {img ? (
+          <img
+            src={img.original}
+            alt={name}
+            className={styles.image}
+            loading="lazy"
+          />
+        ) : (
+          <Image
+            className={styles.image}
+            src={PersonPlaceholder}
+            alt={name}
+            objectFit="cover"
+          />
+        )}
       </div>
       <div className={styles.textWrapper}>
         <h4 className={styles.name}>{name}</h4>

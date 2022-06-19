@@ -1,17 +1,26 @@
 import styles from "../styles/SearchCard.module.css";
 import Image from "next/image";
-import Blank from "../assets/Blank.png";
+import Blank from "../assets/BlankPotrait.png";
 
 const SearchCard = ({ data }) => {
   return (
     <div className={styles.container}>
       <div className={styles.imageWrapper}>
-        <Image
-          src={data.image ? data.image.medium : Blank}
-          alt={data.name}
-          width={200}
-          height={200}
-        />
+        {data.image ? (
+          <img
+            className={styles.image}
+            src={data.image.original}
+            alt={data.name}
+            loading="lazy"
+          />
+        ) : (
+          <Image
+            className={styles.image}
+            src={Blank}
+            alt={data.name}
+            objectFit="cover"
+          />
+        )}
       </div>
       <div className={styles.textWrapper}>
         <h4 className={styles.title}>{data.name}</h4>

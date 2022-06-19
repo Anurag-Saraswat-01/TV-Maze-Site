@@ -1,0 +1,36 @@
+.container {
+  padding: 1rem;
+  min-height: calc(100vh - 128px);
+}
+
+.resultWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.title {
+    font-family: var(--heading);
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    padding: 2rem;
+  }
+
+  .resultWrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .container {
+    padding: 2rem calc(50% - 640px + 4rem);
+    min-height: calc(100vh - 144px);
+  }
+
+  .resultWrapper {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}

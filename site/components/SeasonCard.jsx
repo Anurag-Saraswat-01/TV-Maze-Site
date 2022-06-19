@@ -1,17 +1,26 @@
 import styles from "../styles/SeasonCard.module.css";
 import Image from "next/image";
-import Blank from "../assets/Blank.png";
+import Blank from "../assets/BlankPotrait.png";
 
 const SeasonCard = ({ data }) => {
   return (
     <div className={styles.container}>
       <div className={styles.imageWrapper}>
-        <Image
-          src={data.image ? data.image.medium : Blank}
-          alt={`Season ${data.number}`}
-          width={200}
-          height={200}
-        />
+        {data.image ? (
+          <img
+            src={data.image.original}
+            alt={`Season ${data.number}`}
+            className={styles.image}
+            loading="lazy"
+          />
+        ) : (
+          <Image
+            src={Blank}
+            alt={`Season ${data.number}`}
+            className={styles.image}
+            objectFit="cover"
+          />
+        )}
       </div>
       <div className={styles.textWrapper}>
         <h4 className={styles.title}>Season {data.number}</h4>
